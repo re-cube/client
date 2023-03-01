@@ -43,16 +43,21 @@ public class MoveCamera : MonoBehaviour
                 _rotation.y = Mathf.Clamp(_rotation.y, -_maxYAngle, _maxYAngle);
                 transform.rotation = Quaternion.Euler(_rotation.y, _rotation.x, 0);
             }
+            //if (Input.GetKey(KeyCode.R))
+            //{
+            //    RaycastHit[] hits = Physics.BoxCastAll(transform.position, new Vector3(0.5f, 0.5f, 100f), transform.forward);
+            //    foreach (var hit in hits)
+            //    {
+            //        if (hit.collider.gameObject.name != "Main Camera")
+            //        {
+            //            hit.collider.gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+            //            Debug.Log(hit.collider.gameObject.name);
+            //        }
+            //    }
+            //    Thread.Sleep(500);
+            //}
         }
 
-        if (Input.GetKey(KeyCode.R))
-        {
-            RaycastHit[] hits = Physics.BoxCastAll(transform.position, new Vector3(0.5f, 0.5f, 100f), transform.forward);
-            foreach (var hit in hits)
-            {
-                Debug.Log(hit.collider.gameObject.name);
-            }
-            Thread.Sleep(500);
-        }
+       
     }
 }
